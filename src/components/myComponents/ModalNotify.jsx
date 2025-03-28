@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,13 +15,14 @@ import { BellRing, TicketX, ServerCrash, Bell } from "lucide-react";
 function ModalNotify({ isOpen, setIsOpen, message }) {
   const api = "https://vecindappback-production.up.railway.app";
   const token = localStorage.getItem("token");
-  const neighborhoodId = localStorage.getItem("neighborhoodId");
+  const neighborhoodCode = localStorage.getItem("neighborhoodCode");
   const [statusCode, setStatusCode] = useState("");
 
   const notifyAll = async () => {
+    //console.log("message", neighborhoodCode)
     try {
       const response = await axios.post(
-        `${api}/security-guards/notify-neighborhood/${neighborhoodId}`,
+        `${api}/security-guards/notify-neighborhood/${neighborhoodCode}`,
         {
           title: "Alerta General",
           message: message,
@@ -35,6 +36,7 @@ function ModalNotify({ isOpen, setIsOpen, message }) {
       );
       responseOk();
     } catch (error) {
+      console.log('eror',error)
       if (error.response.status === 404) {
         responseBad();
       } else {
@@ -75,6 +77,10 @@ function ModalNotify({ isOpen, setIsOpen, message }) {
       },
     });
   };
+
+  useEffect(() => {
+   setStatusCode("")
+  }, [isOpen]);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

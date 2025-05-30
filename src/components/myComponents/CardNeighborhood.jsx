@@ -10,14 +10,18 @@ import {
 import { BuildingApartment } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import CardSkeleton from "./CardSkeleton";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { navigateToHome } from "@/utils/navigateToHome";
+import { useNavigateToHome } from "@/hooks/useNavigateToHome";
+
 function CardNeighborhood({ neighborhoods }) {
-  
-  const guard =  (code,id,name) =>{
-    localStorage.setItem("neighborhoodCode", code);
-    localStorage.setItem("neighborhoodId",id)
-    localStorage.setItem("neighborhoodName",name)
-      window.location.assign("/Home");
-  }
+  // const guard =  (code,id,name) =>{
+  //   localStorage.setItem("neighborhoodCode", code);
+  //   localStorage.setItem("neighborhoodId",id)
+  //   localStorage.setItem("neighborhoodName",name)
+  //     window.location.assign("/Home");
+  // }
+  const navigateToHome = useNavigateToHome();
   return (
     <>
       {neighborhoods.length === 0 ? (
@@ -40,18 +44,26 @@ function CardNeighborhood({ neighborhoods }) {
                 />
               </CardHeader>
               <CardContent>
-                <div >
-                    <div>
-                        <span>Nombre:</span>
-                        {vecindad.nombre}
-                    </div>
+                <div>
+                  <div>
+                    <span>Nombre:</span>
+                    {vecindad.nombre}
+                  </div>
                 </div>
               </CardContent>
               <CardFooter>
                 <div>
-                    <Button onClick={()=> guard(vecindad.codigo, vecindad.id, vecindad.nombre)}>
-                        Ingresar
-                    </Button>
+                  <Button
+                    onClick={() =>
+                      navigateToHome(
+                        vecindad.codigo,
+                        vecindad.id,
+                        vecindad.nombre
+                      )
+                    }
+                  >
+                    Ingresar
+                  </Button>
                 </div>
               </CardFooter>
             </Card>

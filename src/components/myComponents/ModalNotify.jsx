@@ -13,7 +13,7 @@ import axios from "axios";
 import { BellRing, TicketX, ServerCrash, Bell } from "lucide-react";
 
 function ModalNotify({ isOpen, setIsOpen, message }) {
-  const api = "https://vecindappback-production.up.railway.app";
+  const api = "https://vecindapp.up.railway.app";
   const token = localStorage.getItem("token");
   const neighborhoodCode = localStorage.getItem("neighborhoodCode");
   const [statusCode, setStatusCode] = useState("");

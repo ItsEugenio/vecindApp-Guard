@@ -5,27 +5,15 @@ import axios from "axios";
 
 function NavBar() {
   const logo = img;
-  const api = "https://vecindappback-production.up.railway.app";
+  const api = "https://vecindapp.up.railway.app";
   const token = localStorage.getItem("token");
   const logOut = async () => {
-    try {
-      const response = await axios.post(
-        `${api}/security-guards/guard/exit`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );    
+  
       localStorage.removeItem("token");
       localStorage.removeItem("neighborhoodCode");
       localStorage.removeItem("neighborhoodId");
       window.location.assign("/"); 
-    } catch (error) {
-      console.log('error',error)
-    }
+
  
    
   };
@@ -37,7 +25,7 @@ function NavBar() {
           <h1 className="text-xl font-semibold">VecindApp Guard</h1>
         </div>
         <div>
-          <Button onClick={logOut}>Cerrar sesion</Button>
+          <Button onClick={() => logOut()}>Cerrar sesion</Button>
         </div>
       </div>
     </nav>

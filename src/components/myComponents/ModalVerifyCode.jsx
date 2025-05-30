@@ -21,7 +21,7 @@ import { UserCheck, UserX, ServerCrash, FileJson2 } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 function ModalVerifyCode({ isOpen, setIsOpen, code }) {
-  const api = "https://vecindappback-production.up.railway.app";
+  const api = "https://vecindapp.up.railway.app";
   const token = localStorage.getItem("token");
   const [statusCode, setStatusCode] = useState("");
   const [openConfirm, setOpenConfirm] = useState(false);

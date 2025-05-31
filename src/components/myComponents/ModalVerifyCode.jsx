@@ -162,6 +162,7 @@ function ModalVerifyCode({ isOpen, setIsOpen, code }) {
           </div>
           <DialogFooter>
             <Button
+            variant="blue"
               onClick={() => {
                 setIsOpen(false);
                 setStatusCode("");
@@ -170,7 +171,7 @@ function ModalVerifyCode({ isOpen, setIsOpen, code }) {
             >
               Cerrar
             </Button>
-            <Button onClick={verifyCode}>Verificar</Button>
+            <Button variant="blue" onClick={verifyCode}>Verificar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

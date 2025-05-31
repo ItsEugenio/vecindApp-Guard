@@ -76,7 +76,7 @@ function TabsLogin() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full" onClick={handleLogin}>
+            <Button className="w-full" onClick={handleLogin} variant="blue">
               Login
             </Button>
           </CardFooter>
@@ -131,7 +131,7 @@ function TabsLogin() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full" onClick={handleRegister}>
+            <Button className="w-full" onClick={handleRegister} variant="blue">
               Register
             </Button>
           </CardFooter>

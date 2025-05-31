@@ -52,6 +52,7 @@ function CardVerifyCode() {
         </CardContent>
         <CardFooter>
           <Button
+            variant="blue"
             disabled={code.length < 6 ? true : false}
             className="w-full"
             onClick={handleVerify}

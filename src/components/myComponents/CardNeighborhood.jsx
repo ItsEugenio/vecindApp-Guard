@@ -54,6 +54,7 @@ function CardNeighborhood({ neighborhoods }) {
               <CardFooter>
                 <div>
                   <Button
+                    variant="blue"
                     onClick={() =>
                       navigateToHome(
                         vecindad.codigo,

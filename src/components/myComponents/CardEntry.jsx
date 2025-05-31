@@ -11,7 +11,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-function CardEntry({neighborhoodId}) {
+function CardEntry({ neighborhoodId }) {
   const api = "https://vecindapp.up.railway.app";
   const token = localStorage.getItem("token");
 
@@ -66,10 +66,10 @@ function CardEntry({neighborhoodId}) {
       <CardContent></CardContent>
       <CardFooter>
         <div className="flex w-full justify-center">
-          <Button onClick={() => entrada()} className="m-2">
+          <Button onClick={() => entrada()} variant="blue" className="m-2">
             Entrada
           </Button>
-          <Button onClick={() => salida()} className="m-2">
+          <Button onClick={() => salida()} variant="blue" className="m-2">
             Salida
           </Button>
         </div>

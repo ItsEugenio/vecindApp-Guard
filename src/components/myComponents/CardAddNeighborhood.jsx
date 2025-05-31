@@ -111,6 +111,7 @@ function CardAddNeighborhood() {
         </CardContent>
         <CardFooter className="flex justify-center">
           <Button
+            variant="blue"
             disabled={code.length < 5 ? true : false}
             onClick={verifyCode}
           >

@@ -48,7 +48,7 @@ function CardNotify() {
           </div>
         </CardContent>
         <CardFooter>
-          <Button disabled={message ? false : true} className="w-full" onClick={notify} >Enviar mensaje</Button>
+          <Button disabled={message ? false : true} variant="blue"  className="w-full" onClick={notify} >Enviar mensaje</Button>
         </CardFooter>
       </Card>
       <ModalNotify isOpen={isOpen} setIsOpen={setIsOpen} message={message} />

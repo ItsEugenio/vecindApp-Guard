@@ -29,6 +29,8 @@ function Home() {
   }, [infoState, navigate]);
 
   const name = infoState?.name;
+  const neighborhoodId = infoState?.id;
+  
 
   return (
     authenticated && infoState && (
@@ -38,9 +40,10 @@ function Home() {
           <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
             Vecindario : {name}
           </h3>
+      
           <CardVerifyCode />
           <CardNotify />
-          <CardEntry />
+          <CardEntry neighborhoodId={neighborhoodId}/>
         </div>
       </main>
     )

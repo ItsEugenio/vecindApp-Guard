@@ -11,18 +11,18 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-function CardEntry() {
+function CardEntry({neighborhoodId}) {
   const api = "https://vecindapp.up.railway.app";
   const token = localStorage.getItem("token");
 
-  const id = localStorage.getItem("neighborhoodId");
+  // const id = localStorage.getItem("neighborhoodId");
 
   const entrada = async () => {
     try {
       const response = await axios.post(
         `${api}/security-guards/guard/entry`,
         {
-          neighborhoodId: id,
+          neighborhoodId: neighborhoodId,
         },
         {
           headers: {
